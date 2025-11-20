@@ -1,27 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background: #0f0c29;
+  --foreground: #ffffff;
+  --primary: #ff00cc;
+  --secondary: #333399;
+  --accent: #00d2ff;
+  --font-quicksand: 'Quicksand', sans-serif;
 }
 
 * {
@@ -30,13 +17,85 @@ body {
   margin: 0;
 }
 
+body {
+  color: var(--foreground);
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  font-family: var(--font-quicksand);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 0, 204, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 204, 0.6);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+
+  50% {
+    box-shadow: 0 0 20px var(--primary), 0 0 10px var(--accent);
+  }
+
+  100% {
+    box-shadow: 0 0 5px var(--primary);
   }
 }
