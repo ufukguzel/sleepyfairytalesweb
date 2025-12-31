@@ -1,0 +1,49 @@
+'use client';
+
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { translations, Language } from './translations';
+
+type LanguageContextType = {
+    language: Language;
+    setLanguage: (lang: Language) => void;
+    t: typeof translations['TR'];
+};
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+    const [language, setLanguage] = useState<Language>('TR');
+
+    // Load language from local storage on mount
+    useEffect(() => {
+        const savedLang = localStorage.getItem('language') as Language;
+        if (savedLang && ['TR', 'EN', 'DE', 'ES'].includes(savedLang)) {
+            setLanguage(savedLang);
+        }
+    }, []);
+
+    // Save language to local storage when changed
+    useEffect(() => {
+        localStorage.setItem('language', language);
+    }, [language]);
+
+    const value = {
+        language,
+        setLanguage,
+        t: translations[language],
+    };
+
+    return (
+        <LanguageContext.Provider value={value}>
+            {children}
+        </LanguageContext.Provider>
+    );
+}
+
+export function useLanguage() {
+    const context = useContext(LanguageContext);
+    if (context === undefined) {
+        throw new Error('useLanguage must be used within a LanguageProvider');
+    }
+    return context;
+}

@@ -1,67 +1,97 @@
-import { Star } from 'lucide-react';
+'use client';
 
-const reviews = [
-    {
-        name: "Güray",
-        rating: 5,
-        comment: "Çok güzel bir uygulama oldukça faydalı 🥰🥰",
-        role: "Parent"
-    },
-    {
-        name: "Zeynep A.",
-        rating: 5,
-        comment: "Masalları çok iyi okuyor kızımın İngilizcesine katkısı oldu.",
-        role: "Mother"
-    },
-    {
-        name: "Ahmet K.",
-        rating: 5,
-        comment: "Çok başarılı bir uygulama emeği geçenleri tebrik ediyorum!!!",
-        role: "Father"
-    }
-];
+import { Star, Quote } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Testimonials() {
+    const { t } = useLanguage();
+
+    const reviews = [
+        {
+            name: t.testimonials.reviews[0].name,
+            rating: 5,
+            comment: t.testimonials.reviews[0].comment,
+            role: t.testimonials.reviews[0].role
+        },
+        {
+            name: t.testimonials.reviews[1].name,
+            rating: 5,
+            comment: t.testimonials.reviews[1].comment,
+            role: t.testimonials.reviews[1].role
+        },
+        {
+            name: t.testimonials.reviews[2].name,
+            rating: 5,
+            comment: t.testimonials.reviews[2].comment,
+            role: t.testimonials.reviews[2].role
+        }
+    ];
+
     return (
-        <section className="py-20 bg-black/20">
-            <div className="container">
-                <div className="text-center mb-16">
-                    <div className="flex justify-center gap-1 mb-4">
+        <section className="py-32 relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-magic-purple/5 to-transparent" />
+
+            <div className="container relative">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-20"
+                >
+                    <div className="flex justify-center gap-2 mb-6">
                         {[1, 2, 3, 4, 5].map((star) => (
-                            <Star key={star} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+                            <motion.div
+                                key={star}
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: star * 0.1 }}
+                            >
+                                <Star className="w-6 h-6 text-magic-gold fill-magic-gold drop-shadow-lg" />
+                            </motion.div>
                         ))}
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Loved by Families</h2>
-                    <p className="text-lg text-purple-200">
-                        Rated 5.0 out of 5 on the App Store
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">{t.testimonials.title_start} <span className="text-gradient-gold">{t.testimonials.title_highlight}</span></h2>
+                    <p className="text-xl text-gray-300 font-medium">
+                        {t.testimonials.subtitle}
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {reviews.map((review, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="glass p-8 rounded-2xl relative"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2, duration: 0.5 }}
+                            className="glass-card p-10 rounded-3xl relative group"
                         >
-                            <div className="absolute -top-4 -left-4 w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-2xl">
-                                "
+                            <div className="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-magic-purple to-magic-blue rounded-2xl flex items-center justify-center shadow-lg transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
+                                <Quote className="w-6 h-6 text-white fill-white" />
                             </div>
-                            <div className="flex gap-1 mb-4">
+
+                            <div className="flex gap-1 mb-6">
                                 {[...Array(review.rating)].map((_, i) => (
-                                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                                    <Star key={i} className="w-4 h-4 text-magic-gold fill-magic-gold" />
                                 ))}
                             </div>
-                            <p className="text-gray-300 mb-6 italic">"{review.comment}"</p>
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center font-bold text-white">
+
+                            <p className="text-lg text-gray-200 mb-8 italic leading-relaxed">"{review.comment}"</p>
+
+                            <div className="flex items-center gap-4 border-t border-white/10 pt-6">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-magic-purple to-magic-blue flex items-center justify-center font-bold text-white text-lg shadow-inner">
                                     {review.name[0]}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">{review.name}</h4>
-                                    <span className="text-sm text-purple-300">{review.role}</span>
+                                    <h4 className="font-bold text-white text-lg">{review.name}</h4>
+                                    <span className="text-sm text-magic-cyan font-medium">{review.role}</span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -8,8 +9,8 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "Sleepy Fairytales - AI-Powered Bedtime Stories",
-  description: "Create personalized, magical bedtime stories for your child with AI. Sleepy Fairytales makes every night an adventure.",
+  title: "Cloudin - Yapay Zeka Destekli Uyku Masalları",
+  description: "Çocuğunuz için yapay zeka destekli, kişiselleştirilmiş ve sihirli uyku masalları oluşturun.",
 };
 
 export default function RootLayout({
@@ -20,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${quicksand.variable} antialiased`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
