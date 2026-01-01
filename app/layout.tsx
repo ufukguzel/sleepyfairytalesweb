@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { Analytics } from "@vercel/analytics/next"
+
 
 const quicksand = Quicksand({
   subsets: ["latin"],
