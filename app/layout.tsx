@@ -25,6 +25,7 @@ export default function RootLayout({
       <body className={`${quicksand.variable} antialiased`}>
         <LanguageProvider>
           {children}
+          <Analytics />
         </LanguageProvider>
       </body>
     </html>

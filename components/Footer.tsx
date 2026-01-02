@@ -2,6 +2,7 @@
 
 import { Instagram, Twitter, Facebook, Mail, Moon } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
+import Link from 'next/link';
 
 export default function Footer() {
     const { t } = useLanguage();
@@ -37,9 +38,9 @@ export default function Footer() {
                     <div>
                         <h4 className="font-bold text-white mb-6 text-lg">{t.footer.legal}</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><a href="/privacy-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.privacy}</a></li>
-                            <li><a href="/terms-of-service" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.terms}</a></li>
-                            <li><a href="/cookie-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.cookies}</a></li>
+                            <li><Link href="/privacy-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.privacy}</Link></li>
+                            <li><Link href="/terms-of-service" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.terms}</Link></li>
+                            <li><Link href="/cookie-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.cookies}</Link></li>
                         </ul>
                     </div>
 

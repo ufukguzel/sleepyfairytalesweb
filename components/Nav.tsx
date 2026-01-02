@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Download, Globe, Moon } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import Link from "next/link";
 
 export default function Nav() {
   const { language, setLanguage, t } = useLanguage();
@@ -30,7 +31,7 @@ export default function Nav() {
         }`}
     >
       <div className="container flex items-center justify-between">
-        <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.location.href = '/'}>
+        <Link href="/" className="flex items-center gap-3 group cursor-pointer">
           <div className="relative">
             <div className="absolute inset-0 bg-magic-purple blur-lg opacity-40 group-hover:opacity-60 transition-opacity" />
             <Moon className="w-8 h-8 text-magic-gold relative z-10 fill-magic-gold" />
@@ -38,15 +39,15 @@ export default function Nav() {
           <div className="text-2xl font-bold tracking-tight">
             <span className="text-white">Cloudin</span>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-6">
-          <a href="/privacy-policy" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          <Link href="/privacy-policy" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
             {t.nav.privacy}
-          </a>
-          <a href="/terms-of-service" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          </Link>
+          <Link href="/terms-of-service" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
             {t.nav.terms}
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
