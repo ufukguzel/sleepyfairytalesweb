@@ -3,6 +3,7 @@ export type Language = 'TR' | 'EN' | 'DE' | 'ES';
 export const translations = {
     TR: {
         nav: {
+            home: "Ana Sayfa",
             download: "Hemen İndir",
             privacy: "Gizlilik",
             terms: "Kullanım",
@@ -19,6 +20,25 @@ export const translations = {
             rating: "4.9/5 Ortalama Puan",
             happyFamilies: "Mutlu Aile",
             mockupTitle: "Sihirli Masal",
+        },
+        howItWorks: {
+            title_start: "Uygulama",
+            title_highlight: "Nasıl Çalışır?",
+            description: "Sadece 3 adımda çocuğunuza özel sihirli masallar oluşturun.",
+            steps: [
+                {
+                    title: "Bilgileri Girin",
+                    description: "Çocuğunuzun ismini, yaşını ve masalın temasını (örneğin: uzay, orman) seçin."
+                },
+                {
+                    title: "Sihri Başlatın",
+                    description: "Yapay zekamız, verdiğiniz bilgilerle eğitici ve güvenli bir masal oluşturur."
+                },
+                {
+                    title: "Keyifle Dinleyin",
+                    description: "Masalı sesli anlatımla dinleyin veya kendiniz okuyun. Favorilerinize kaydedin."
+                }
+            ]
         },
         features: {
             title_start: "Ebeveynler",
@@ -100,22 +120,31 @@ export const translations = {
         legal: {
             privacy: {
                 title: "Gizlilik Politikası",
-                lastUpdated: "Son Güncelleme",
+                lastUpdated: "Son güncelleme: 12 Haziran 2025",
+                description: "Sleepy Fairy Tales (\"biz\", \"bize\" veya \"bizim\") olarak, gizliliğinizi korumaya kararlıyız. Bu Gizlilik Politikası, uygulamamızı ve hizmetlerimizi (\"Hizmetler\") kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı, ifşa ettiğimizi ve koruduğumuzu açıklamaktadır.",
                 sections: [
-                    { title: "1. Giriş", content: "Cloudin olarak gizliliğinize önem veriyoruz. Bu Gizlilik Politikası, uygulamamızı ve web sitemizi kullandığınızda verilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar." },
-                    { title: "2. Toplanan Veriler", content: "Hizmetimizi sağlamak için çocuğun ismi, yaşı, ilgi alanları ve uygulama kullanım verilerini toplayabiliriz." },
-                    { title: "3. Veri Güvenliği", content: "Verileriniz endüstri standardı güvenlik önlemleriyle korunmaktadır. Kişisel verilerinizi asla üçüncü taraflara satmıyoruz." },
-                    { title: "4. İletişim", content: "Gizlilik politikamızla ilgili sorularınız için support@cloudin.com adresinden bize ulaşabilirsiniz." }
+                    { title: "1. Topladığımız Bilgiler", content: "Kullanıcı Tarafından Sağlanan Bilgiler\nHizmetlerimizi kullandığınızda, özellikle masal kişiselleştirme özellikleri için çocuğun adı, yaşı ve cinsiyeti gibi belirli kişisel bilgileri bize gönüllü olarak sağlayabilirsiniz. Ayrıca ebeveyn onayı ve iletişim için ebeveyn e-posta adresini de isteyebiliriz.\n\nSes Verisi (İsteğe Bağlı)\nSesli anlatım özelliğini kullanmayı seçerseniz, sesinizi kaydetmek için izninizi isteyebiliriz. Bu kayıtlar, yalnızca sizin tarafınızdan kullanılmak üzere güvenli bir şekilde saklanır ve asla izniniz olmadan paylaşılmaz.\n\nOtomatik Olarak Toplanan Bilgiler\nHizmetlerimizi iyileştirmek amacıyla, cihaz türü, işletim sistemi, IP adresi (anonimleştirilmiş), uygulama kullanım istatistikleri ve kilitlenme raporları gibi anonimleştirilmiş verileri otomatik olarak toplayabiliriz." },
+                    { title: "2. Bilgilerin Kullanımı", content: "Topladığımız bilgileri şu amaçlarla kullanırız:\n* Hizmetlerimizi sunmak, sürdürmek ve kişiselleştirmek.\n* Uygulama deneyimini ve özelliklerini geliştirmek.\n* Teknik destek sağlamak ve sorularınıza yanıt vermek.\n* Güvenliği sağlamak, dolandırıcılığı önlemek.\n* Yasal yükümlülüklere uymak." },
+                    { title: "3. Üçüncü Taraflarla Paylaşım", content: "Kişisel bilgilerinizi satmıyoruz veya kiralamıyoruz. Bilgilerinizi yalnızca aşağıdaki durumlarda paylaşabiliriz:\n* Hizmet Sağlayıcılar: Uygulamayı barındırma, analiz ve müşteri desteği gibi hizmetleri gerçekleştiren güvenilir üçüncü taraf şirketlerle, katı gizlilik yükümlülükleri altında.\n* Yasal Gereklilikler: Yasal bir zorunluluğa uymak veya haklarımızı korumak için gerekli olduğunda.\n* Açık Onayınızla: Bilgilerinizi paylaşmamız için bize özel izin verdiğiniz durumlarda." },
+                    { title: "4. Veri Güvenliği ve Çocukların Gizliliği", content: "Verilerinizin güvenliğini ciddiye alıyoruz. Yetkisiz erişimi, ifşayı veya değişikliği önlemek için şifreleme ve erişim kontrolleri dahil olmak üzere endüstri standardı güvenlik önlemleri uyguluyoruz.\n\nHizmetlerimiz öncelikli olarak çocuklara yöneliktir ve Çocukların Çevrimiçi Gizliliğini Koruma Yasası (COPPA) gibi düzenlemelere uymaya kararlıyız. 13 yaşın altındaki çocuklardan kişisel bilgi toplamadan önce doğrulanabilir ebeveyn onayı alırız. Ebeveynler, çocuklarının bilgilerini inceleme, silme ve daha fazla toplanmasını reddetme hakkına sahiptir." },
+                    { title: "5. Haklarınız ve Seçimleriniz", content: "Kişisel bilgilerinize erişme, bunları düzeltme veya silme hakkına sahipsiniz. Bu haklarınızı kullanmak için lütfen aşağıdaki iletişim bilgilerinden bize ulaşın." },
+                    { title: "6. Politikadaki Değişiklikler", content: "Bu gizlilik politikasını zaman zaman güncellenebilir. Önemli değişiklikler hakkında uygulama içi bildirim veya e-posta yoluyla sizi bilgilendireceğiz. Güncellenmiş politikayı düzenli olarak gözden geçirmenizi öneririz." },
+                    { title: "7. İletişim", content: "Bu Gizlilik Politikası ile ilgili herhangi bir sorunuz veya endişeniz varsa, lütfen bize ulaşın:\nE-posta: info.sleepyfairytales@gmail.com" }
                 ]
             },
             terms: {
-                title: "Hizmet Şartları",
-                lastUpdated: "Son Güncelleme",
+                title: "Kullanım Koşulları (Terms of Use)",
+                lastUpdated: "Son güncelleme: 23 Haziran 2025",
+                description: "Bu Kullanım Koşulları, Sleepy Fairy Tales mobil uygulamasının (\"Uygulama\") kullanımını düzenlemektedir. Uygulamayı indirerek, kurarak veya kullanarak bu Koşulları kabul etmiş olursunuz. Bu Koşulları kabul etmiyorsanız, lütfen Uygulamayı kullanmayın.",
                 sections: [
-                    { title: "1. Kabul", content: "Cloudin uygulamasını veya web sitesini kullanarak, bu Hizmet Şartlarını kabul etmiş olursunuz." },
-                    { title: "2. Kullanım Lisansı", content: "Cloudin, size uygulamayı kişisel ve ticari olmayan amaçlarla kullanmanız için sınırlı, geri alınabilir bir lisans verir." },
-                    { title: "3. Abonelikler", content: "Bazı özellikler premium abonelik gerektirebilir. Abonelik detayları ve fiyatlandırma uygulama içinde belirtilmiştir." },
-                    { title: "4. Sorumluluk Reddi", content: "Uygulama 'olduğu gibi' sunulmaktadır. Cloudin, uygulamanın kesintisiz veya hatasız olacağını garanti etmez." }
+                    { title: "1. Hizmet Tanımı", content: "Sleepy Fairy Tales, yapay zeka destekli masallar oluşturan bir mobil uygulamaydır. Kullanıcılara sesli anlatımla desteklenen kişiselleştirilmiş masallar sunar." },
+                    { title: "2. Kullanım Koşulları", content: "Uygulamayı yalnızca kişisel ve ticari olmayan amaçlarla kullanmayı kabul edersiniz. Hizmeti yasal olmayan, zarar verici, taciz edici veya uygunsuz şekilde kullanamazsınız." },
+                    { title: "3. Abonelikler ve Ödemeler", content: "Uygulama içerisinde otomatik yenilenen abonelik seçenekleri sunulabilir. Şu bilgileri kabul edersiniz:\n\n* Abonelik Detayları:\n    * Aylık: 200 TL (yaklaşık $6.99 USD)\n    * Yıllık: 800 TL (yaklaşık $27.99 USD)\n* Abonelikler otomatik olarak yenilenir ve siz iptal edene kadar devam eder.\n* Otomatik yenileme, geçerli abonelik süresi sona ermeden en az 24 saat önce kapatılmazsa, bir sonraki dönem için ücret tahsil edilir.\n* Aboneliklerinizi App Store hesabı ayarlarından dilediğiniz zaman iptal edebilirsiniz." },
+                    { title: "4. Gizlilik", content: "Verilerinizin toplanma, kullanılma ve paylaşılma şartları Gizlilik Politikamızda ayrıntılı olarak belirtilmiştir. Uygulamayı kullanarak Gizlilik Politikamızı da kabul etmiş olursunuz. Gizlilik Politikasına buradan erişin" },
+                    { title: "5. İçerik Sahipliği ve Lisans", content: "Tüm içerikler (yazı, görsel, ses) Sleepy Fairy Tales'e aittir veya lisanslıdır. Bu içerikler izinsiz kopyalanamaz, dağıtılamaz veya kullanılamaz." },
+                    { title: "6. Değişiklikler", content: "Bu Koşullar zaman zaman güncellenebilir. Önemli değişiklikler durumunda uygulama içi bildirim veya e-posta ile bilgilendirme yapılır. En güncel versiyon uygulama içinden her zaman erişilebilir." },
+                    { title: "7. İzleme ve Takip", content: "Uygulama herhangi bir şekilde kullanıcı takibi yapmamaktadır. App Tracking Transparency çerçevesi dışında kullanıcı verileri reklam amacıyla paylaşılmaz veya dış kaynaklarla ilişkilenmez." },
+                    { title: "8. Destek ve İletişim", content: "Sorularınız veya destek talepleriniz için bizimle aşağıdaki e-posta adresinden iletişime geçebilirsiniz:\nE-posta: info.sleepyfairytales@gmail.com" }
                 ]
             },
             cookies: {
@@ -131,6 +160,7 @@ export const translations = {
     },
     EN: {
         nav: {
+            home: "Home",
             download: "Download Now",
             privacy: "Privacy",
             terms: "Terms",
@@ -147,6 +177,25 @@ export const translations = {
             rating: "4.9/5 Average Rating",
             happyFamilies: "Happy Families",
             mockupTitle: "Magical Story",
+        },
+        howItWorks: {
+            title_start: "How it",
+            title_highlight: "Works?",
+            description: "Create magical stories for your child in just 3 simple steps.",
+            steps: [
+                {
+                    title: "Enter Details",
+                    description: "Select your child's name, age, and the theme of the story (e.g., space, forest)."
+                },
+                {
+                    title: "Start the Magic",
+                    description: "Our AI creates an educational and safe story using the information you provide."
+                },
+                {
+                    title: "Listen and Enjoy",
+                    description: "Listen to the story with voice narration or read it yourself. Save to your favorites."
+                }
+            ]
         },
         features: {
             title_start: "Why Parents",
@@ -229,6 +278,7 @@ export const translations = {
             privacy: {
                 title: "Privacy Policy",
                 lastUpdated: "Last Updated",
+                description: "At Cloudin, we value your privacy. This Privacy Policy explains how we collect, use, and protect your data when you use our app and website.",
                 sections: [
                     { title: "1. Introduction", content: "At Cloudin, we value your privacy. This Privacy Policy explains how we collect, use, and protect your data when you use our app and website." },
                     { title: "2. Data Collected", content: "To provide our service, we may collect child's name, age, interests, and app usage data." },
@@ -239,6 +289,7 @@ export const translations = {
             terms: {
                 title: "Terms of Service",
                 lastUpdated: "Last Updated",
+                description: "By using the Cloudin app or website, you agree to these Terms of Service.",
                 sections: [
                     { title: "1. Acceptance", content: "By using the Cloudin app or website, you agree to these Terms of Service." },
                     { title: "2. License", content: "Cloudin grants you a limited, revocable license to use the app for personal, non-commercial purposes." },
@@ -259,6 +310,7 @@ export const translations = {
     },
     DE: {
         nav: {
+            home: "Startseite",
             download: "Jetzt Herunterladen",
             privacy: "Datenschutz",
             terms: "Nutzung",
@@ -275,6 +327,25 @@ export const translations = {
             rating: "4.9/5 Durchschnittsbewertung",
             happyFamilies: "Glückliche Familien",
             mockupTitle: "Magische Geschichte",
+        },
+        howItWorks: {
+            title_start: "Wie es",
+            title_highlight: "funktioniert?",
+            description: "Erstellen Sie magische Geschichten für Ihr Kind in nur 3 einfachen Schritten.",
+            steps: [
+                {
+                    title: "Details eingeben",
+                    description: "Wählen Sie Name, Alter und das Thema der Geschichte Ihres Kindes (z. B. Weltraum, Wald)."
+                },
+                {
+                    title: "Starten Sie die Magie",
+                    description: "Unsere KI erstellt eine lehrreiche und sichere Geschichte mit den von Ihnen bereitgestellten Informationen."
+                },
+                {
+                    title: "Zuhören und genießen",
+                    description: "Hören Sie sich die Geschichte mit Sprachausgabe an oder lesen Sie sie selbst. Speichern Sie sie in Ihren Favoriten."
+                }
+            ]
         },
         features: {
             title_start: "Warum Eltern",
@@ -357,16 +428,18 @@ export const translations = {
             privacy: {
                 title: "Datenschutzrichtlinie",
                 lastUpdated: "Zuletzt aktualisiert",
+                description: "Bei Cloudin schätzen wir Ihre Privatsphäre. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Daten sammeln, verwenden und schützen.",
                 sections: [
                     { title: "1. Einführung", content: "Bei Cloudin schätzen wir Ihre Privatsphäre. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Daten sammeln, verwenden und schützen." },
                     { title: "2. Gesammelte Daten", content: "Um unseren Service bereitzustellen, können wir Name, Alter, Interessen des Kindes und App-Nutzungsdaten sammeln." },
                     { title: "3. Datensicherheit", content: "Ihre Daten werden durch branchenübliche Sicherheitsmaßnahmen geschützt. Wir verkaufen Ihre persönlichen Daten niemals an Dritte." },
-                    { title: "4. Kontakt", content: "Bei Fragen zu unserer Datenschutzrichtlinie erreichen Sie uns unter support@cloudin.com." }
+                    { title: "4. Contact", content: "Bei Fragen zu unserer Datenschutzrichtlinie erreichen Sie uns unter support@cloudin.com." }
                 ]
             },
             terms: {
                 title: "Nutzungsbedingungen",
                 lastUpdated: "Zuletzt aktualisiert",
+                description: "Durch die Nutzung der Cloudin-App oder -Website stimmen Sie diesen Nutzungsbedingungen zu.",
                 sections: [
                     { title: "1. Akzeptanz", content: "Durch die Nutzung der Cloudin-App oder -Website stimmen Sie diesen Nutzungsbedingungen zu." },
                     { title: "2. Lizenz", content: "Cloudin gewährt Ihnen eine begrenzte, widerrufliche Lizenz zur Nutzung der App für persönliche, nicht kommerzielle Zwecke." },
@@ -387,6 +460,7 @@ export const translations = {
     },
     ES: {
         nav: {
+            home: "Inicio",
             download: "Descargar Ahora",
             privacy: "Privacidad",
             terms: "Términos",
@@ -403,6 +477,25 @@ export const translations = {
             rating: "4.9/5 Calificación Promedio",
             happyFamilies: "Familias Felices",
             mockupTitle: "Cuento Mágico",
+        },
+        howItWorks: {
+            title_start: "¿Cómo",
+            title_highlight: "Funciona?",
+            description: "Crea cuentos mágicos para tu hijo en solo 3 sencillos pasos.",
+            steps: [
+                {
+                    title: "Ingresar Detalles",
+                    description: "Selecciona el nombre, la edad y el tema del cuento de tu hijo (por ejemplo: espacio, bosque)."
+                },
+                {
+                    title: "Inicia la Magia",
+                    description: "Nuestra IA crea un cuento educativo y seguro utilizando la información que proporciones."
+                },
+                {
+                    title: "Escucha ve Disfruta",
+                    description: "Escucha el cuento con narración de voz o léelo tú mismo. Guárdalo en tus favoritos."
+                }
+            ]
         },
         features: {
             title_start: "Por Qué los Padres",
@@ -485,6 +578,7 @@ export const translations = {
             privacy: {
                 title: "Política de Privacidad",
                 lastUpdated: "Última Actualización",
+                description: "En Cloudin valoramos tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tus datos.",
                 sections: [
                     { title: "1. Introducción", content: "En Cloudin valoramos tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tus datos." },
                     { title: "2. Datos Recopilados", content: "Para proporcionar nuestro servicio, podemos recopilar el nombre, edad, intereses del niño y datos de uso de la aplicación." },
@@ -495,6 +589,7 @@ export const translations = {
             terms: {
                 title: "Términos de Servicio",
                 lastUpdated: "Última Actualización",
+                description: "Al usar la aplicación o el sitio web de Cloudin, aceptas estos Términos de Servicio.",
                 sections: [
                     { title: "1. Aceptación", content: "Al usar la aplicación o el sitio web de Cloudin, aceptas estos Términos de Servicio." },
                     { title: "2. Licencia", content: "Cloudin te otorga una licencia limitada y revocable para usar la aplicación con fines personales y no comerciales." },

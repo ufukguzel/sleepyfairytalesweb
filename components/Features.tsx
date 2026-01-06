@@ -51,18 +51,18 @@ export default function Features() {
             {/* Background decoration */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-magic-purple/10 rounded-full blur-[120px] -z-10" />
 
-            <div className="container">
+            <div className="container px-6 sm:px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-20"
+                    className="text-center mb-12 sm:mb-20"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white tracking-tight">
                         {t.features.title_start} <span className="text-gradient">{t.features.title_highlight}</span>
                     </h2>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
                         {t.features.description}
                     </p>
                 </motion.div>
@@ -72,19 +72,19 @@ export default function Features() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
                 >
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
                             variants={item}
-                            className="glass-card p-8 rounded-3xl group"
+                            className="glass-card p-6 sm:p-8 rounded-2xl sm:rounded-3xl group"
                         >
-                            <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg group-hover:shadow-magic-purple/20 border border-white/10">
+                            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg group-hover:shadow-magic-purple/20 border border-white/10">
                                 {feature.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4 text-white group-hover:text-magic-purple transition-colors">{feature.title}</h3>
-                            <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{feature.description}</p>
+                            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white group-hover:text-magic-purple transition-colors">{feature.title}</h3>
+                            <p className="text-sm sm:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">{feature.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>

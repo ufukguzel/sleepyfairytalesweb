@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, Star, Sparkles, Moon, Cloud } from 'lucide-react';
+import { Download, Star, Sparkles, Cloud } from 'lucide-react';
+import Image from 'next/image';
 
 import { useLanguage } from '@/lib/LanguageContext';
 
@@ -17,33 +18,34 @@ export default function Hero() {
             </div>
 
             <div className="container relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
                     {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-center lg:text-left"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 border-magic-purple/30"
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 border-magic-purple/30 mx-auto lg:mx-0"
                         >
                             <Sparkles className="w-4 h-4 text-magic-gold animate-spin-slow" />
                             <span className="text-sm font-medium text-magic-purple">{t.hero.badge}</span>
                         </motion.div>
 
-                        <h1 className="hero-title">
-                            {t.hero.title_start} <br />
+                        <h1 className="hero-title font-quicksand text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                            {t.hero.title_start} <br className="hidden sm:block" />
                             <span className="text-gradient">{t.hero.title_highlight}</span> {t.hero.title_end}
                         </h1>
 
-                        <p className="hero-description">
+                        <p className="hero-description text-base sm:text-lg lg:text-xl mx-auto lg:mx-0">
                             {t.hero.description}
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                        <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
                             <a
                                 href="https://apps.apple.com/tr/app/cloudin/id6747094017"
                                 target="_blank"
@@ -53,12 +55,15 @@ export default function Hero() {
                                 <Download className="w-5 h-5 group-hover:animate-bounce" />
                                 {t.hero.download}
                             </a>
-                            <button className="px-8 py-4 rounded-full glass hover:bg-white/10 transition-all font-semibold flex items-center justify-center gap-2 text-white">
+                            <a
+                                href="#how-it-works"
+                                className="px-8 py-4 rounded-full glass hover:bg-white/10 transition-all font-semibold flex items-center justify-center gap-2 text-white"
+                            >
                                 <span>{t.hero.howItWorks}</span>
-                            </button>
+                            </a>
                         </div>
 
-                        <div className="flex items-center gap-8 pt-8 border-t border-white/10">
+                        <div className="flex items-center gap-8 pt-8 border-t border-white/10 justify-center lg:justify-start">
                             <div>
                                 <div className="flex items-center gap-1 mb-1">
                                     {[1, 2, 3, 4, 5].map((_, i) => (
@@ -79,22 +84,20 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative hidden lg:block"
+                        className="relative flex justify-center items-center"
                     >
-                        <div className="relative w-[500px] h-[500px] mx-auto">
-                            {/* Glowing Moon */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-magic-purple/20 to-magic-blue/20 rounded-full blur-3xl animate-pulse-slow" />
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-b from-slate-900 to-slate-950 rounded-[3rem] border-4 border-slate-800 shadow-2xl flex items-center justify-center overflow-hidden float-animation">
-                                {/* Phone Screen Mockup */}
-                                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531685250784-75699ddc9afc?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-50" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-                                <div className="relative z-10 text-center p-6">
-                                    <div className="w-16 h-16 bg-magic-purple/20 rounded-2xl mx-auto mb-4 flex items-center justify-center backdrop-blur-md border border-white/10">
-                                        <Sparkles className="w-8 h-8 text-magic-gold" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">{t.hero.mockupTitle}</h3>
-                                    <div className="h-2 w-24 bg-white/20 rounded-full mx-auto mb-2" />
-                                    <div className="h-2 w-16 bg-white/20 rounded-full mx-auto" />
+                        <div className="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] mx-auto">
+                            {/* Phone Mockup Frame */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[450px] sm:w-[280px] sm:h-[580px] bg-[#0a051e] rounded-[2.5rem] sm:rounded-[3rem] border-[6px] sm:border-[8px] border-slate-800 shadow-[0_0_50px_rgba(99,102,241,0.3)] overflow-hidden float-animation">
+                                {/* Real App Screenshot */}
+                                <div className="relative w-full h-full">
+                                    <Image
+                                        src="/app_screen.png"
+                                        alt="App Screen"
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                    />
                                 </div>
                             </div>
 
@@ -102,25 +105,31 @@ export default function Hero() {
                             <motion.div
                                 animate={{ y: [-10, 10, -10] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute top-0 right-10 p-4 glass rounded-2xl"
+                                className="absolute top-0 right-0 sm:right-10 p-2 glass rounded-2xl"
                             >
-                                <Moon className="w-8 h-8 text-magic-gold fill-magic-gold" />
+                                <Image
+                                    src="/logo.png"
+                                    alt="Logo"
+                                    width={32}
+                                    height={32}
+                                    className="rounded-lg shadow-lg sm:w-12 sm:h-12"
+                                />
                             </motion.div>
 
                             <motion.div
                                 animate={{ y: [10, -10, 10] }}
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute bottom-20 left-0 p-4 glass rounded-2xl"
+                                className="absolute bottom-5 sm:bottom-20 left-0 p-3 sm:p-4 glass rounded-2xl"
                             >
-                                <Cloud className="w-8 h-8 text-magic-cyan fill-magic-cyan/20" />
+                                <Cloud className="w-5 h-5 sm:w-8 sm:h-8 text-magic-cyan fill-magic-cyan/20" />
                             </motion.div>
 
                             <motion.div
                                 animate={{ scale: [1, 1.2, 1] }}
                                 transition={{ duration: 3, repeat: Infinity }}
-                                className="absolute top-1/2 right-0 p-3 glass rounded-full"
+                                className="absolute top-1/2 -right-5 sm:right-0 p-2 sm:p-3 glass rounded-full"
                             >
-                                <Star className="w-6 h-6 text-magic-purple fill-magic-purple" />
+                                <Star className="w-4 h-4 sm:w-6 sm:h-6 text-magic-purple fill-magic-purple" />
                             </motion.div>
                         </div>
                     </motion.div>

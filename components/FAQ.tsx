@@ -30,24 +30,24 @@ export default function FAQ() {
 
     return (
         <section className="py-32 relative">
-            <div className="container max-w-4xl">
+            <div className="container max-w-4xl px-6 sm:px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-20"
+                    className="text-center mb-12 sm:mb-20"
                 >
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 mb-6 glass">
-                        <HelpCircle className="w-8 h-8 text-magic-purple" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/5 mb-6 glass">
+                        <HelpCircle className="w-6 h-6 sm:w-8 sm:h-8 text-magic-purple" />
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">{t.faq.title_start} <span className="text-gradient">{t.faq.title_highlight}</span></h2>
-                    <p className="text-xl text-gray-400">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white">{t.faq.title_start} <span className="text-gradient">{t.faq.title_highlight}</span></h2>
+                    <p className="text-lg sm:text-xl text-gray-400">
                         {t.faq.description}
                     </p>
                 </motion.div>
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                     {faqs.map((faq, index) => (
                         <motion.div
                             key={index}
@@ -55,17 +55,17 @@ export default function FAQ() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className={`glass-card rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white/10 border-magic-purple/30' : 'hover:bg-white/5'}`}
+                            className={`glass-card rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white/10 border-magic-purple/30' : 'hover:bg-white/5'}`}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full flex items-center justify-between p-8 text-left text-white font-medium transition-colors"
+                                className="w-full flex items-center justify-between p-5 sm:p-8 text-left text-white font-medium transition-colors"
                             >
-                                <span className="text-lg md:text-xl font-semibold">{faq.question}</span>
+                                <span className="text-base sm:text-lg md:text-xl font-semibold">{faq.question}</span>
                                 {openIndex === index ? (
-                                    <ChevronUp className="w-6 h-6 text-magic-purple shrink-0 ml-4" />
+                                    <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-magic-purple shrink-0 ml-4" />
                                 ) : (
-                                    <ChevronDown className="w-6 h-6 text-gray-400 shrink-0 ml-4" />
+                                    <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 shrink-0 ml-4" />
                                 )}
                             </button>
 
@@ -78,7 +78,7 @@ export default function FAQ() {
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="px-8 pb-8 text-gray-300 leading-relaxed text-lg border-t border-white/5 pt-6">
+                                        <div className="px-5 pb-5 sm:px-8 sm:pb-8 text-gray-300 leading-relaxed text-sm sm:text-lg border-t border-white/5 pt-4 sm:pt-6">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

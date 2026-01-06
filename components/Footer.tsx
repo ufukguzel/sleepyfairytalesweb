@@ -12,9 +12,9 @@ export default function Footer() {
             {/* Background Glow */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-magic-purple/10 rounded-full blur-[100px] -z-10" />
 
-            <div className="container relative z-10">
-                <div className="grid md:grid-cols-4 gap-12 mb-16">
-                    <div className="col-span-2">
+            <div className="container relative z-10 px-6 sm:px-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div className="col-span-1 md:col-span-2 text-center md:text-left">
                         <div className="flex items-center gap-2 mb-6">
                             <Moon className="w-6 h-6 text-magic-gold fill-magic-gold" />
                             <h3 className="text-2xl font-bold text-white">Cloudin</h3>
@@ -22,7 +22,7 @@ export default function Footer() {
                         <p className="text-gray-400 max-w-sm leading-relaxed mb-8">
                             {t.footer.description}
                         </p>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 justify-center md:justify-start">
                             <a href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-magic-purple transition-all duration-300 text-white hover:scale-110 group">
                                 <Instagram className="w-5 h-5 group-hover:animate-pulse" />
                             </a>
@@ -35,16 +35,16 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="text-center md:text-left">
                         <h4 className="font-bold text-white mb-6 text-lg">{t.footer.legal}</h4>
                         <ul className="space-y-4 text-gray-400">
-                            <li><Link href="/privacy-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.privacy}</Link></li>
-                            <li><Link href="/terms-of-service" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.terms}</Link></li>
-                            <li><Link href="/cookie-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.cookies}</Link></li>
+                            <li><Link href="/privacy-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 justify-center md:justify-start group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.privacy}</Link></li>
+                            <li><Link href="/terms-of-service" className="hover:text-magic-purple transition-colors flex items-center gap-2 justify-center md:justify-start group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.terms}</Link></li>
+                            <li><Link href="/cookie-policy" className="hover:text-magic-purple transition-colors flex items-center gap-2 justify-center md:justify-start group"><span className="w-1.5 h-1.5 rounded-full bg-magic-purple opacity-0 group-hover:opacity-100 transition-opacity" /> {t.footer.cookies}</Link></li>
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="text-center md:text-left">
                         <h4 className="font-bold text-white mb-6 text-lg">{t.footer.contact}</h4>
                         <a href="mailto:support@cloudin.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group p-4 glass rounded-xl border border-white/5 hover:border-magic-purple/30">
                             <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-magic-purple/20 transition-colors">
